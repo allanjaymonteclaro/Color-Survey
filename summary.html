@@ -1,0 +1,33 @@
+<div id="summary">
+
+		<div class="toggle switch-field">
+			<input type="radio" name="summaryPage" ng-model="summaryPage" value="table" id="switch_left"> 
+			<label for="switch_left">Table</label>
+
+			<input type="radio" name="summaryPage" ng-model="summaryPage" value="chart" id="switch_right">
+			<label for="switch_right">Chart</label>
+		</div>
+
+			
+	<div id="summary-show">
+		<div ng-show="summaryPage == 'table'">
+			<table>
+				<tr>
+					<th>Colors</th>
+					<th>Occurrences</th>
+				</tr>
+				<tr ng-repeat="occurrence in colorOccurrence">
+					<td>{{occurrence.color}}</td>
+					<td>{{occurrence.occur}}</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div ng-show="summaryPage == 'chart'">
+			<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels">
+			</canvas> 
+		</div>
+
+		{{test}}
+	</div>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="color-survey">
+<head>
+	<meta charset="UTF-8">
+	<title>Color Survey</title>
+
+	<script src="vendor/angular.min.js"></script>
+ 	<script src="vendor/route/angular-route.min.js"></script>
+ 	<script src="vendor/storage/dist/angular-local-storage.min.js"></script>
+ 	<script type="text/javascript" src="vendor/chart/master/Chart.min.js"></script>
+ 	<script type="text/javascript" src="vendor/chart/angular-chart.min.js"></script>	
+ 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
+
+
+ 	<script src="js/script.js"></script>
+
+ 	<link rel="stylesheet" type="text/css" href="vendor/chart/angular-chart.css">
+ 	<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+ 	
+</head>
+<body >
+	<div ng-controller="csController">
+		<div>
+			<nav role="navigation">
+				<ul>
+					<li class="nav-column"><a href="#/">Home</a></li>
+					<li class="nav-column"><a href="#survey" ng-click="toggleSaved()">Survey</a></li>
+					<li class="nav-column"><a href="#results">Results</a></li>
+					<li class="nav-column"><a href="#summary" ng-click="updateSummary()">Summary</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="main">
+			<div class="main-column"></div>
+			<div ng-view class="main-column" id="view"></div>
+			<div class="main-column"></div>
+		</div>
+	</div>
+</body>
+</html>

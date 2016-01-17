@@ -1,0 +1,58 @@
+<div id="results">
+	<h3>
+		Results
+	</h3>
+	<table>
+		<tr>
+			<th>Date</th>
+			<th>Name</th>
+			<th>Color</th>
+		</tr>
+		<tr ng-repeat="profile in profiles" onclick="showLightbox()" ng-click="showMore(profile)">
+				<td>{{profile.date | date:'yyyy-mm-dd'}}</td>
+				<td>{{profile.name}}</td>
+				<td ng-style="{'background-color': profile.color}"></td>
+		</tr>
+	</table>
+
+
+<!--	 <p>
+	 	This is the main content. To display a lightbox click 
+	 	<a href = "javascript:void(0)" onclick = "showLightbox()">here</a>
+	 </p>
+-->
+
+<div id="light" class="white_content"> 
+	<table>
+	     <tr>
+	     	<th>Date</th>
+	     	<td>{{profileLightbox.date | date:'yyyy-mm-dd'}}</td>	
+	     </tr>
+	     <tr>
+	     	<th>Name</th>
+	     	<td>{{profileLightbox.name}}</td>
+	     </tr>
+	     <tr>
+	     	<th>Email</th>
+	     	<td>{{profileLightbox.email}}</td>
+	     </tr>
+	     <tr>
+	     	<th>Gender</th>
+	     	<td>{{profileLightbox.gender}}</td>
+	     </tr>
+	     <tr>
+	     	<th>Color</th>
+	     	<td>{{profileLightbox.color}}</td>
+	     </tr>
+	</table>
+
+	<br>
+	<div id="close"><a href = "javascript:void(0)" onclick="closeLightbox()">Close</a></div>
+	<br>
+</div>
+<div id="fade" class="black_overlay" onclick="closeLightbox()">
+        	
+</div>
+
+     
+</div>

@@ -1,0 +1,16 @@
+@mixin center-align(){
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+h3{
+	font-size: 30px;
+	margin-bottom: 20px;
+	@include center-align;
+}
+
+html{
+	background-image: url("images/paper.png");
+	font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+}

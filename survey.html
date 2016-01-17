@@ -1,0 +1,49 @@
+<div id="survey">
+
+	
+	<div ng-show="surveySaved == 'false'" >
+		<h3>Survey Form</h3>
+		<form name="surveyForm" novalidate>
+			<input type="text" name="name" ng-model="name" placeholder="Name" required class="survey-fields text-input">
+			<span ng-messages="surveyForm.name.$error" ng-if="surveyForm.name.$touched" class="warning-bubble">
+				<span ng-message="required" class="warning-message">Your name is required.</span>
+			</span>
+
+			<input type="email" name="email" ng-model="email" placeholder="Email" required class="survey-fields text-input">
+			<span ng-messages="surveyForm.email.$error" ng-if="surveyForm.email.$touched" class="warning-bubble">
+				<span ng-message="required" class="warning-message">Your email is required.</span>
+				<span ng-message="email" class="warning-message">This needs to be a valid email.</span>	
+			</span>
+
+			<div class="survey-fields switch-field" id="genderToggle">
+				<input type="radio" name="gender" value="male" ng-model="gender" id="switch_left" required>
+				<label for="switch_left">M</label>
+						
+				<input type="radio" name="gender" value="female" ng-model="gender" id="switch_right" required>
+				<label for="switch_right">F</label>
+				<span ng-messages="surveyForm.gender.$error" ng-if="surveyForm.gender.$touched"></span>
+			</div>
+		
+			<div class="survey-fields">
+				<input type="text" name="favColor" class="favColor" placeholder="Favorite color" value="{{colorSelected}}" ng-click="showPicker()" ng-style="{'background-color':colorSelected};" readonly="true"> 
+			
+				<div class="colorWrap"><span class="colorPicker" ng-repeat="color in colors" ng-click="colorSelect(color)" ng-show="showColors" ng-model="colorSelected" ng-style="{'background-color':color};"><div></div></span></div>
+			</div>
+
+			<br>
+			<br>
+
+			<div>
+				<button type="submit" value="submit" ng-disabled="surveyForm.$invalid" ng-model="surveySaved" ng-click="saveData(name, email, gender)" ng-show="showSubmit == 'true'" class="survey-fields" id="submit-button">Submit</button>
+			</div>
+		</form>
+
+	</div>
+
+	<div ng-show="surveySaved == 'true'" id="form-confirmation">
+		<p></p>
+		<p id="submitted">Form Submitted!</p>
+		<p></p>
+	</div>
+		
+</div>

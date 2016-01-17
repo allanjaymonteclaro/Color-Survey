@@ -1,0 +1,16 @@
+.warning-bubble{
+	float: right;
+	margin-top: -45px;
+	margin-bottom: 5px;
+	margin-right: 20px;
+	border-radius: 5px;
+	padding: 5px;
+	padding-top: 30px;
+	background-color: #e74c3c;
+
+	.warning-message{
+		font-size: 10px;
+		color: #ecf0f1;
+
+	}
+}
